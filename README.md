@@ -25,4 +25,114 @@
  • додала методи для зміни атрибутів - setID, setStatus, setTotal з відповідними параметрами та перевіркою присвоюваних значень
  • використала ці методи в методі main класуCustomerTest
  • зробила та зберегла у теку Solution файл advanced1.png, advanced1(2 part)png, advanced2.png скріншоти результатів роботи програми, та модифікувала файл README.md відповідним чином.
+ 
+Коди:
 
+Customer.java
+package domain;
+public class Customer {
+    public int id = 1;
+    public boolean isNew = true;
+    public float total = 1000;
+
+  
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public boolean isIsNew() {
+        return isNew;
+    }
+    public void setIsNew(boolean isNew) {
+        this.isNew = isNew;
+    }
+    public float getTotal() {
+        return total;
+    }
+    public void setTotal(float total) {
+        this.total = total;
+    }
+    
+    
+ public void displayCustomerInfo(){
+    System.out.println("id: " + id);
+    System.out.println("isNew: " + isNew);
+    System.out.println("total: " + total);
+ }}
+
+CustomerTest.java
+package domain;
+
+public class CustomerTest {
+    public static void main(String args[]){
+      Customer myCustomer = new Customer();
+      myCustomer.displayCustomerInfo();
+    }
+}
+Змінені коди:
+
+Customer.java
+package domain;
+public class Customer {
+    public int id = 1;
+    public boolean isNew = true;
+    public float total = 1000;
+
+  public Customer(){
+    this.id = 1;
+    this.isNew = true;
+    this.total = 1000;
+}
+  
+    public int getId() {
+        return id;
+    }
+
+    public boolean isIsNew() {
+        return isNew;
+    }
+  
+    public float getTotal() {
+        return total;
+    }
+
+  public void setId(int id) {
+        if (id > 0) {
+            this.id = id;
+        }
+    }
+  
+    public void setIsNew(boolean isNew) {
+        this.isNew = isNew;
+    }
+  
+    public void setTotal(float total) {
+        if (total > 0) {
+            this.total = total;
+        }
+    }
+    
+    
+ public void displayCustomerInfo(){
+    System.out.println("id: " + id);
+    System.out.println("isNew: " + isNew);
+    System.out.println("total: " + total);
+ }}
+ 
+CustomerTest.java
+package domain;
+
+public class CustomerTest {
+    public static void main(String args[]){
+      Customer myCustomer = new Customer();
+      myCustomer.displayCustomerInfo();
+
+      myCustomer.setId(3);
+      myCustomer.setIsNew(false);
+      myCustomer.setTotal(2000);
+
+       myCustomer.displayCustomerInfo();
+    }
+}
