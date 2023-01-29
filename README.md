@@ -32,8 +32,9 @@
 
 #### Початковий варіант
 
-````java
 Customer.java
+
+````java
 package domain;
 public class Customer {
     public int id = 1;
@@ -68,8 +69,9 @@ public class Customer {
  }}
 ````
 
-````java
 CustomerTest.java
+
+````java
 package domain;
 
 public class CustomerTest {
@@ -82,8 +84,9 @@ public class CustomerTest {
 
 #### Змінені коди:
 
-```` java
 Customer.java
+
+```` java
 package domain;
 public class Customer {
     public int id = 1;
@@ -131,9 +134,9 @@ public class Customer {
     System.out.println("total: " + total);
  }}
  ````
+CustomerTest.java
 
 ````java
-CustomerTest.java
 package domain;
 
 public class CustomerTest {
